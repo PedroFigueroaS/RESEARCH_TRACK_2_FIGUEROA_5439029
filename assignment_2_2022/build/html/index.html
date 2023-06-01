@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to Research track 2 Assignment’s documentation! &#8212; Research track 2 Assignment 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="welcome-to-research-track-2-assignment-s-documentation">
+<h1>Welcome to Research track 2 Assignment’s documentation!<a class="headerlink" href="#welcome-to-research-track-2-assignment-s-documentation" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+<section id="assignment-documentation">
+<h2>Assignment documentation!<a class="headerlink" href="#assignment-documentation" title="Permalink to this heading">¶</a></h2>
+<p>This is the documentation of the assignment 2 package!</p>
+</section>
+</section>
+<section id="module-scripts.nodeA">
+<span id="nodea-module"></span><h1>nodeA Module<a class="headerlink" href="#module-scripts.nodeA" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="module-nodeA"></span><dl class="py function">
+<dt class="sig sig-object py" id="scripts.nodeA.cancel_sim">
+<span class="sig-prename descclassname"><span class="pre">scripts.nodeA.</span></span><span class="sig-name descname"><span class="pre">cancel_sim</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/nodeA.html#cancel_sim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.nodeA.cancel_sim" title="Permalink to this definition">¶</a></dt>
+<dd><p>In the <strong>cancel_sim</strong> function, the client call the cancel_goal function to stop the robots movement
+and cancel the current goal. Finally moves back to <strong>user_select()</strong></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.nodeA.main">
+<span class="sig-prename descclassname"><span class="pre">scripts.nodeA.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/nodeA.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.nodeA.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function of nodeA.py. Displays the options for the user to set a new goal or cancel the current goal
+Then creates a new topic <strong>nodeAclient</strong>, then creates a client variable to use the Action Client <em>/reaching_goal</em>.
+Finally, call the function <strong>user_select()</strong></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.nodeA.new_position">
+<span class="sig-prename descclassname"><span class="pre">scripts.nodeA.</span></span><span class="sig-name descname"><span class="pre">new_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/nodeA.html#new_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.nodeA.new_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>In <strong>new_position</strong> function, the program ask to enter the new goal by entering a position in X and Y axes. Then
+this values goes to the goal properties using the PoseStamped message type. Finally, the client value uses the function send_goal
+to send the position to the Action server. After a pause of 2 seconds, the program returns to the <strong>user_select()</strong> function.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.nodeA.user_select">
+<span class="sig-prename descclassname"><span class="pre">scripts.nodeA.</span></span><span class="sig-name descname"><span class="pre">user_select</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/nodeA.html#user_select"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.nodeA.user_select" title="Permalink to this definition">¶</a></dt>
+<dd><p>In the <strong>user_select</strong> function, the program ask to choose for 1 option: 1 to set a new goal, 2 to cancel the current goal and stop
+the robot. Based in the option, the program then will move to the functions <strong>new_position</strong> or <strong>cancel_sim</strong></p>
+</dd></dl>
+
+</section>
+<section id="module-scripts.nodeB">
+<span id="nodeb-module"></span><h1>nodeB Module<a class="headerlink" href="#module-scripts.nodeB" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="module-nodeB"></span><dl class="py function">
+<dt class="sig sig-object py" id="scripts.nodeB.cllback">
+<span class="sig-prename descclassname"><span class="pre">scripts.nodeB.</span></span><span class="sig-name descname"><span class="pre">cllback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/nodeB.html#cllback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.nodeB.cllback" title="Permalink to this definition">¶</a></dt>
+<dd><p>In the <strong>cllback</strong> function, each time the robot reach or cancel a goal, the msg variable will make its property <em>status</em>
+change to 2 or 3. Depending on the value, a counter for each case will increase its value.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.nodeB.main">
+<span class="sig-prename descclassname"><span class="pre">scripts.nodeB.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/nodeB.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.nodeB.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function of nodeB.py. Creates the node <em>nodeB</em>, subscribes to the topic <em>/reaching_goal/result</em>, and call the <strong>cllback</strong>
+function. Call the service “reach_cancel_ints”, and calls the <strong>serv_callback</strong> function. The program keeps running with the
+rospy.spin function.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.nodeB.serv_callback">
+<span class="sig-prename descclassname"><span class="pre">scripts.nodeB.</span></span><span class="sig-name descname"><span class="pre">serv_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">req</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/nodeB.html#serv_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.nodeB.serv_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>In the <strong>serv_callback</strong> function, when the service is called, the program will display the number of targets cancelled
+and reached</p>
+</dd></dl>
+
+</section>
+<section id="module-scripts.nodeA_msg">
+<span id="nodea-publisher-module"></span><h1>nodeA publisher Module<a class="headerlink" href="#module-scripts.nodeA_msg" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="module-nodeA_msg"></span><dl class="py function">
+<dt class="sig sig-object py" id="scripts.nodeA_msg.main">
+<span class="sig-prename descclassname"><span class="pre">scripts.nodeA_msg.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/nodeA_msg.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.nodeA_msg.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function of nodeA_msg. The program create a node <strong>nodeAmsg</strong>. It subscribes to the topic <em>/odom</em>, and call the function
+msg_callback. Due to issues between sphinx behaviour and this code, line 24 of the program has been commented:
+<strong>from assignment_2_2022.msg import node_pub</strong>. To run this code erase the <strong>#</strong> character behind the line.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.nodeA_msg.msg_callback">
+<span class="sig-prename descclassname"><span class="pre">scripts.nodeA_msg.</span></span><span class="sig-name descname"><span class="pre">msg_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/nodeA_msg.html#msg_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.nodeA_msg.msg_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>In the <strong>msg_callback</strong> function, a publisher is created, to publish value in the topic <em>chatter</em>, using node_pub custom message.
+The values store in the <em>info</em> variable are related with the current position and velocity of the robot. They will be stored
+in the <strong>message</strong> variable that has the attibutes of node_pub custom message. Finally this message will be displayed and published.</p>
+</dd></dl>
+
+</section>
+<section id="module-scripts.nodeC">
+<span id="nodec-module"></span><h1>nodeC Module<a class="headerlink" href="#module-scripts.nodeC" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="module-nodeC"></span><dl class="py function">
+<dt class="sig sig-object py" id="scripts.nodeC.callback">
+<span class="sig-prename descclassname"><span class="pre">scripts.nodeC.</span></span><span class="sig-name descname"><span class="pre">callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/nodeC.html#callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.nodeC.callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <strong>callback</strong> function request the goal position from the parameters of the project, and the current position from the msg variable
+that contains the current position and velocity attributes. By computing the euclidean formula to the difference of the desired
+and current position and for the velocities, it is computed and displayes the total distance and velocity
+between the robot and the goal.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scripts.nodeC.main">
+<span class="sig-prename descclassname"><span class="pre">scripts.nodeC.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/nodeC.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scripts.nodeC.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function of nodeC.py. Creates a node <em>nodeC</em>, then it subscribes to the topic <em>chatter</em> and call the <strong>callback</strong> function</p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Research track 2 Assignment</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Pedro Figueroa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
